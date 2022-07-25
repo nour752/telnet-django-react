@@ -10,3 +10,5 @@ class TutorialSerializer(serializers.ModelSerializer):
                   'title',
                   'description',
                   'published')
+
+                 

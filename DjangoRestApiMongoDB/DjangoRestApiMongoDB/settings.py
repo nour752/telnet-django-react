@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Tutorials application 
     'tutorials.apps.TutorialsConfig',
-    'services_static.apps.Services_staticConfig',
+    
+    'servstatic.apps.ServstaticConfig',
     # CORS
     'corsheaders',
 ]

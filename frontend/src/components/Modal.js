@@ -15,7 +15,7 @@ export default class CustomModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: this.props.choose,
+      activeItem: this.props.activeItem,
     };
   }
 
@@ -27,6 +27,7 @@ export default class CustomModal extends Component {
     }
 
     const activeItem = { ...this.state.activeItem, [name]: value };
+
     this.setState({ activeItem });
   };
 
@@ -35,29 +36,20 @@ export default class CustomModal extends Component {
 
     return (
       <Modal isOpen={true} toggle={toggle}>
-        <ModalHeader toggle={toggle}>service Item</ModalHeader>
+        <ModalHeader toggle={toggle}>Services Item</ModalHeader>
         <ModalBody>
           <Form>
+           
+           
             <FormGroup check>
               <Label check>
                 <Input
                   type="checkbox"
-                  name="Lambda"
-                  checked={this.state.activeItem.Lambda}
+                  name="lambda"
+                  checked={this.state.activeItem.service_name}
                   onChange={this.handleChange}
                 />
-                Lambda
-              </Label>
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input
-                  type="checkbox"
-                  name="Kinesis"
-                  checked={this.state.activeItem.Kinesis}
-                  onChange={this.handleChange}
-                />
-                Kinesis
+                lambda
               </Label>
             </FormGroup>
             <FormGroup check>
@@ -65,12 +57,15 @@ export default class CustomModal extends Component {
                 <Input
                   type="checkbox"
                   name="S3"
-                  checked={this.state.activeItem.s3}
+                  checked={this.state.activeItem.service_name}
                   onChange={this.handleChange}
                 />
                 S3
               </Label>
             </FormGroup>
+
+
+
           </Form>
         </ModalBody>
         <ModalFooter>
